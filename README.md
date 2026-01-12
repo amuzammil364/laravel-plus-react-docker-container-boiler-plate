@@ -34,7 +34,7 @@ Before running the project, make sure you have:
 ```bash
 git clone <your-repo-url>
 cd root_folder
-
+```
 
 ---
 
@@ -42,23 +42,29 @@ cd root_folder
 
 - Laravel backend .env.example → copy to .env
 
-Example backend .env database settings matches docker-compose.yml
+- Example backend .env database settings matches docker-compose.yml
 
+```bash
 DB_CONNECTION=mysql
 DB_HOST=db
 DB_PORT=3306
 DB_DATABASE=laravel_db
 DB_USERNAME=laravel
 DB_PASSWORD="saqib123@@"
+```
 
 - Example frontend .env API URL
+
 REACT_APP_API_URL=http://backend:8000
 
 
 ## 3️⃣ Start the Containers
 
 - From the root_folder run this command
-- docker compose up -d --build
+
+```bash
+docker compose up -d --build
+```
 
 This will:
 
@@ -74,12 +80,17 @@ Start PHPMyAdmin on http://localhost:8080
 ## 4️⃣ Stop Containers
 
 - To stop all containers run this command
-- docker compose down
 
+```bash
+docker compose down
+```
 
 ## 5️⃣ Rebuild Containers
 
 - If you change Dockerfile or environment variables run this command
-- docker compose up -d --build
+
+```bash
+docker compose up -d --build
+```
 
 This README.md now covers everything for a new user to clone the repo and run Laravel + React + MySQL Docker setup with PHPMyAdmin.
