@@ -13,6 +13,8 @@ COPY . .
 RUN composer install --no-interaction --prefer-dist \
     && cp .env.example .env \
     && php artisan key:generate \
+    && php artisan migrate --force \
+    && php artisan db:seed --force \
     && chown -R www-data:www-data storage bootstrap/cache \
     && chmod -R 775 storage bootstrap/cache
 
