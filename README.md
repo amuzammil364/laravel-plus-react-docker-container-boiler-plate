@@ -11,11 +11,14 @@ This repository contains a **Dockerized full-stack project** with:
 
 ## Folder Structure
 
+
+```text
 root_folder/
 ├── backend-app/
 ├── frontend-app/
 ├── laravel_db_data/
 └── compose.yml
+```
 
 ---
 
