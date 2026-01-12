@@ -55,8 +55,9 @@ DB_PASSWORD="saqib123@@"
 
 - Example frontend .env API URL
 
+```bash
 REACT_APP_API_URL=http://backend:8000
-
+```
 
 ## 3️⃣ Start the Containers
 
