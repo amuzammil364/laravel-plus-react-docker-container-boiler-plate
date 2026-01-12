@@ -1,0 +1,7 @@
+.git
+node_modules
+vendor
+.env
+laravel_db_data
+db_data
+*.sock

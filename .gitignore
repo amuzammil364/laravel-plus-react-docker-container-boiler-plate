@@ -1,0 +1,18 @@
+# Laravel backend
+backend-app/vendor/
+backend-app/node_modules/
+backend-app/.env
+backend-app/laravel_db_data/
+
+# React frontend
+frontend-app/node_modules/
+frontend-app/build/
+frontend-app/.env
+frontend-app/.git  # remove embedded repo if exists
+
+# MySQL runtime files
+laravel_db_data/
+*.sock
+
+# Logs
+*.log

@@ -1,0 +1,50 @@
+services:
+  backend:
+    build:
+      context: ./backend-app
+    container_name: laravel_app
+    volumes:
+      - ./backend-app:/var/www
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+  frontend:
+    build:
+      context: ./frontend-app
+    container_name: react_app
+    volumes:
+      - ./frontend-app:/usr/src/app
+    ports:
+      - "3000:3000"
+    command: npm start
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    depends_on:
+      - backend
+  db:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: laravel_db
+      MYSQL_USER: laravel
+      MYSQL_PASSWORD: "saqib123@@"
+      MYSQL_ROOT_PASSWORD: "saqib123@@"
+    ports:
+      - 3307:3306
+    volumes:
+      - C:/Users/Syndior/Desktop/saqibs-work/Docker/docker-starter-project-root/laravel_db_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: laravel_phpmyadmin
+    ports:
+      - "8080:80"
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: "saqib123@@"
+    depends_on:
+      - db
+volumes:
+  laravel_db_data:
